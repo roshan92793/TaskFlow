@@ -30,7 +30,7 @@ app.use(cors({
 }));
 
 // ✅ IMPORTANT: handle preflight requests
-app.options("*", cors());
+// app.options("*", cors());
 
 // Middleware
 app.use(bodyParser.json());
