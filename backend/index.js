@@ -12,8 +12,8 @@ const PORT = process.env.PORT || 8080;
 app.use(
   cors({
     origin: [
-      // "http://localhost:3000",
-      "task-flow-nine-tau.vercel.app"
+      "http://localhost:3000",
+      "https://task-flow-nine-tau.vercel.app"
     ],
     credentials: true
   })
