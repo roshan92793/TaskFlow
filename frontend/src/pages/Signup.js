@@ -36,7 +36,7 @@ function Signup() {
     }
 
     try {
-      const url = `${process.env.REACT_APP_API_URL}/auth/signup`;
+      const url = "https://taskflow-api.onrender.com/auth/signup";
       const response = await fetch(url, {
         method: "POST",
         headers: {

@@ -9,18 +9,34 @@ require('./Models/db');
 
 const PORT = process.env.PORT || 8080;
 
-app.use(
-  cors({
-    origin: [
-      "http://localhost:3000",
-      "https://task-flow-nine-tau.vercel.app"
-    ],
-    credentials: true
-  })
-);
+const allowedOrigins = [
+  "http://localhost:3000",
+  "https://task-flow-nine-tau.vercel.app"
+];
 
+// ✅ CORS (IMPORTANT)
+app.use(cors({
+  origin: function (origin, callback) {
+    if (!origin) return callback(null, true);
+    if (allowedOrigins.includes(origin)) {
+      return callback(null, true);
+    } else {
+      return callback(new Error("Not allowed by CORS"));
+    }
+  },
+  credentials: true,
+  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+  allowedHeaders: ["Content-Type", "Authorization"]
+}));
+
+// ✅ IMPORTANT: handle preflight requests
+app.options("*", cors());
+
+// Middleware
 app.use(bodyParser.json());
+app.use(express.json());
 
+// Routes
 app.get('/ping', (req, res) => {
   res.send('Hello, World!');
 });
