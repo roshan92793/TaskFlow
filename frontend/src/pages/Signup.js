@@ -36,7 +36,7 @@ function Signup() {
     }
 
     try {
-      const url = "https://taskflow-api.onrender.com/auth/signup";
+      const url = "https://taskflow-xu1n.onrender.com/auth/signup";
       const response = await fetch(url, {
         method: "POST",
         headers: {
