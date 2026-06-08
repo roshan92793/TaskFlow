@@ -36,14 +36,14 @@ function Signup() {
     }
 
     try {
-      const url = "https://taskflow-xu1n.onrender.com/auth/signup";
+      const url = "http://localhost:8080/auth/signup";
       const response = await fetch(url, {
-      method: "POST",
-      headers: {
-      "Content-Type": "application/json"
-    },
-    body: JSON.stringify(signupInfo)
-  });
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(signupInfo),
+      });
 
       const result = await response.json();
       const { success, message, error } = result;
