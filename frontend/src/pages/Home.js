@@ -111,296 +111,73 @@ function Home() {
           (completedTasks / todos.length) * 100
         );
 
-  const styles = {
-  container: {
-    minHeight: "100vh",
-    padding: "20px",
-    background:
-      "linear-gradient(135deg, #0f172a, #1e293b, #334155)",
-    fontFamily: "'Poppins', sans-serif",
-    position: "relative",
-    overflow: "hidden",
-  },
-
-  circle1: {
-    position: "absolute",
-    width: "300px",
-    height: "300px",
-    borderRadius: "50%",
-    background: "rgba(56,189,248,0.25)",
-    top: "-120px",
-    left: "-120px",
-    filter: "blur(80px)",
-  },
-
-  circle2: {
-    position: "absolute",
-    width: "350px",
-    height: "350px",
-    borderRadius: "50%",
-    background: "rgba(34,197,94,0.2)",
-    bottom: "-120px",
-    right: "-120px",
-    filter: "blur(90px)",
-  },
-
-  dashboard: {
-    maxWidth: "1200px",
-    margin: "0 auto",
-    background: "rgba(255,255,255,0.08)",
-    backdropFilter: "blur(15px)",
-    WebkitBackdropFilter: "blur(15px)",
-    border: "1px solid rgba(255,255,255,0.1)",
-    borderRadius: "25px",
-    padding: "30px",
-    color: "#fff",
-    boxShadow: "0 8px 32px rgba(0,0,0,0.25)",
-    position: "relative",
-    zIndex: 2,
-  },
-
-  navbar: {
-    display: "flex",
-    justifyContent: "space-between",
-    alignItems: "center",
-    marginBottom: "30px",
-    flexWrap: "wrap",
-    gap: "15px",
-  },
-
-  logo: {
-    fontSize: "32px",
-    fontWeight: "bold",
-    background:
-      "linear-gradient(to right, #38bdf8, #22c55e)",
-    WebkitBackgroundClip: "text",
-    WebkitTextFillColor: "transparent",
-  },
-
-  navRight: {
-    display: "flex",
-    alignItems: "center",
-    gap: "15px",
-    color: "#fff",
-    fontWeight: "600",
-  },
-
-  userName: {
-    color: "#22c55e",
-    fontWeight: "bold",
-  },
-
-  logoutBtn: {
-    background:
-      "linear-gradient(135deg,#ff416c,#ff4b2b)",
-    border: "none",
-    color: "#fff",
-    padding: "10px 20px",
-    borderRadius: "10px",
-    cursor: "pointer",
-    fontWeight: "bold",
-  },
-
-  statsContainer: {
-    display: "grid",
-    gridTemplateColumns:
-      "repeat(auto-fit,minmax(220px,1fr))",
-    gap: "20px",
-    marginBottom: "30px",
-  },
-
-  statCard: {
-    background: "rgba(255,255,255,0.08)",
-    border: "1px solid rgba(255,255,255,0.1)",
-    backdropFilter: "blur(10px)",
-    padding: "20px",
-    borderRadius: "15px",
-    textAlign: "center",
-    color: "#fff",
-  },
-
-  statNumber: {
-    fontSize: "32px",
-    fontWeight: "bold",
-    marginBottom: "10px",
-  },
-
-  progressSection: {
-    marginBottom: "30px",
-    color: "#fff",
-  },
-
-  progressBar: {
-    height: "20px",
-    background: "rgba(255,255,255,0.15)",
-    borderRadius: "20px",
-    overflow: "hidden",
-    marginTop: "10px",
-  },
-
-  progressFill: {
-    height: "100%",
-    background:
-      "linear-gradient(90deg,#22c55e,#38bdf8)",
-    transition: "0.4s",
-  },
-
-  inputContainer: {
-    display: "flex",
-    gap: "10px",
-    marginBottom: "30px",
-    flexWrap: "wrap",
-  },
-
-  input: {
-    flex: 1,
-    minWidth: "250px",
-    padding: "15px",
-    borderRadius: "12px",
-    border: "1px solid rgba(255,255,255,0.2)",
-    background: "rgba(255,255,255,0.08)",
-    color: "#fff",
-    outline: "none",
-    fontSize: "16px",
-  },
-
-  addButton: {
-    padding: "15px 25px",
-    border: "none",
-    borderRadius: "12px",
-    cursor: "pointer",
-    fontWeight: "bold",
-    background:
-      "linear-gradient(135deg,#22c55e,#38bdf8)",
-    color: "#fff",
-  },
-
-  todoContainer: {
-    display: "flex",
-    flexDirection: "column",
-    gap: "15px",
-  },
-
-  todoCard: {
-    display: "flex",
-    justifyContent: "space-between",
-    alignItems: "center",
-    background: "rgba(255,255,255,0.08)",
-    border: "1px solid rgba(255,255,255,0.1)",
-    backdropFilter: "blur(10px)",
-    padding: "15px",
-    borderRadius: "15px",
-    flexWrap: "wrap",
-    gap: "10px",
-    color: "#fff",
-  },
-
-  todoLeft: {
-    display: "flex",
-    alignItems: "center",
-    gap: "12px",
-    fontSize: "16px",
-  },
-
-  actions: {
-    display: "flex",
-    gap: "10px",
-  },
-
-  editBtn: {
-    background: "#38bdf8",
-    border: "none",
-    color: "#fff",
-    padding: "8px 15px",
-    borderRadius: "8px",
-    cursor: "pointer",
-    fontWeight: "bold",
-  },
-
-  deleteBtn: {
-    background: "#ef4444",
-    border: "none",
-    color: "#fff",
-    padding: "8px 15px",
-    borderRadius: "8px",
-    cursor: "pointer",
-    fontWeight: "bold",
-  },
-
-  footer: {
-    marginTop: "40px",
-    textAlign: "center",
-    borderTop: "1px solid rgba(255,255,255,0.15)",
-    paddingTop: "20px",
-    color: "#fff",
-  },
-};
-
   return (
-    <div style={styles.container}>
-      <div style={styles.circle1}></div>
-      <div style={styles.circle2}></div>
-      <div style={styles.dashboard}>
-        <div style={styles.navbar}>
-          <h1 style={styles.logo}>To-Do Dashboard</h1>
+    <div className="dashboard-container">
+      <div className="bg-decor-container">
+        <div className="auth-circle1"></div>
+        <div className="auth-circle2"></div>
+      </div>
+      <div className="dashboard-card">
+        <div className="dashboard-navbar">
+          <h1 className="dashboard-logo">To-Do Dashboard</h1>
 
-          <div style={styles.navRight}>
+          <div className="dashboard-nav-right">
             <span>
-              Welcome,
-              {" "}
-              <span style={styles.userName}>
+              Welcome,{" "}
+              <span className="dashboard-username">
                 {loggedInUser}
               </span>
             </span>
 
             <button
               onClick={handleLogout}
-              style={styles.logoutBtn}
+              className="dashboard-logout-btn"
             >
               Logout
             </button>
           </div>
         </div>
 
-        <div style={styles.statsContainer}>
-          <div style={styles.statCard}>
-            <div style={styles.statNumber}>
+        <div className="stats-grid">
+          <div className="stat-card">
+            <div className="stat-number">
               {todos.length}
             </div>
             <p>Total Tasks</p>
           </div>
 
-          <div style={styles.statCard}>
-            <div style={styles.statNumber}>
+          <div className="stat-card">
+            <div className="stat-number">
               {completedTasks}
             </div>
             <p>Completed</p>
           </div>
 
-          <div style={styles.statCard}>
-            <div style={styles.statNumber}>
+          <div className="stat-card">
+            <div className="stat-number">
               {pendingTasks}
             </div>
             <p>Pending</p>
           </div>
         </div>
 
-        <div style={styles.progressSection}>
-          <h3>Completion Progress</h3>
+        <div className="progress-section">
+          <div className="progress-header">
+            <h3>Completion Progress</h3>
+            <span className="progress-percentage">{progress}% Completed</span>
+          </div>
 
-          <div style={styles.progressBar}>
+          <div className="progress-bar-bg">
             <div
+              className="progress-bar-fill"
               style={{
-                ...styles.progressFill,
                 width: `${progress}%`,
               }}
             />
           </div>
-
-          <p>{progress}% Completed</p>
         </div>
 
-        <div style={styles.inputContainer}>
+        <div className="todo-input-container">
           <input
             type="text"
             placeholder="Enter a task..."
@@ -408,49 +185,43 @@ function Home() {
             onChange={(e) =>
               setTask(e.target.value)
             }
-            style={styles.input}
+            className="todo-input"
           />
 
           <button
             onClick={addTodo}
-            style={styles.addButton}
+            className="todo-add-btn"
           >
             {editingId ? "Update" : "Add Task"}
           </button>
         </div>
 
-        <div style={styles.todoContainer}>
+        <div className="todo-list-wrapper">
           {todos.map((todo) => (
             <div
               key={todo.id}
-              style={styles.todoCard}
+              className="todo-card"
             >
-              <div style={styles.todoLeft}>
+              <div className="todo-card-left">
                 <input
                   type="checkbox"
                   checked={todo.completed}
                   onChange={() =>
                     toggleComplete(todo.id)
                   }
+                  className="todo-checkbox"
                 />
 
                 <span
-                  style={{
-                    textDecoration:
-                      todo.completed
-                        ? "line-through"
-                        : "none",
-                    opacity:
-                      todo.completed ? 0.6 : 1,
-                  }}
+                  className={`todo-text ${todo.completed ? "completed" : ""}`}
                 >
                   {todo.text}
                 </span>
               </div>
 
-              <div style={styles.actions}>
+              <div className="todo-actions">
                 <button
-                  style={styles.editBtn}
+                  className="todo-edit-btn"
                   onClick={() =>
                     editTodo(todo)
                   }
@@ -459,7 +230,7 @@ function Home() {
                 </button>
 
                 <button
-                  style={styles.deleteBtn}
+                  className="todo-delete-btn"
                   onClick={() =>
                     deleteTodo(todo.id)
                   }
@@ -471,20 +242,17 @@ function Home() {
           ))}
         </div>
 
-        <div style={styles.footer}>
+        <div className="dashboard-footer">
           <h3>Task Summary</h3>
 
           <p>
-            Total Tasks: {todos.length} | Completed:
-            {" "}
-            {completedTasks} | Pending:
-            {" "}
+            Total Tasks: {todos.length} | Completed:{" "}
+            {completedTasks} | Pending:{" "}
             {pendingTasks}
           </p>
 
           <p>
-            Productivity Score:
-            {" "}
+            Productivity Score:{" "}
             <strong>{progress}%</strong>
           </p>
         </div>
